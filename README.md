@@ -1,0 +1,2 @@
+# StringReplace
+If FileExists($sFile) Then    _XMLFileOpen($sFile)    If @error Then     MsgBox(4096 + 262144, "Error", _XMLError())     Return ""    EndIf    $t_code = _XMLGetValue("//Code")    If @error Then     MsgBox(4096 + 262144, "Error", _XMLError())     Return ""    EndIf    If IsArray($t_code) Then     For $x = 0 To UBound($t_code) - 1      $s_code = $s_code &amp; StringReplace(StringReplace($t_code[$x], @CR, "", 0), @LF, @CRLF, 0)     Next    EndIf    Return $s_code   EndIf
